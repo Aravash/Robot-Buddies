@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\jacob\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\jacob\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_RobotBuddies.1646213828.00" t="ExcludeRecursive" />
+    <e p="C:\Users\jacob\Desktop\KRAKEN\RobotBuddies" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="FSP" t="Include">
+          <e p="MAST" t="Include">
+            <e p="Etc" t="Include">
+              <e p="FSP Grid Shader.shader" t="Include" />
+            </e>
+            <e p="License.txt" t="Include" />
+            <e p="readme.txt" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="Grid" t="Include">
+                <e p="MAST_Grid_Manager.cs" t="Include" />
+              </e>
+              <e p="Interface" t="Include">
+                <e p="MAST_Hotkeys.cs" t="Include" />
+                <e p="MAST_Interface_Data_Manager.cs" t="Include" />
+                <e p="MAST_Interface_Window.cs" t="Include" />
+                <e p="MAST_Palette.cs" t="Include" />
+                <e p="MAST_PlayModeStateListener.cs" t="Include" />
+                <e p="MAST_Snapshot_Camera_Component.cs" t="Include" />
+                <e p="Scriptable Objects" t="Include">
+                  <e p="MAST_Interface_ScriptableObject.cs" t="Include" />
+                  <e p="MAST_Prefab_Category_ScriptableObject.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Placement" t="Include">
+                <e p="MAST_Placement_Helper.cs" t="Include" />
+                <e p="MAST_Placement_Interface.cs" t="Include" />
+                <e p="MAST_Placement_Manipulate.cs" t="Include" />
+                <e p="MAST_Placement_PaintArea.cs" t="Include" />
+                <e p="MAST_Placement_Place.cs" t="Include" />
+                <e p="MAST_Placement_Randomizer.cs" t="Include" />
+                <e p="MAST_Placement_Visualizer.cs" t="Include" />
+              </e>
+              <e p="Prefabs" t="Include">
+                <e p="MAST_Prefab_Component.cs" t="Include" />
+              </e>
+              <e p="Settings" t="Include">
+                <e p="MAST_Settings.cs" t="Include" />
+                <e p="MAST_Settings_Window.cs" t="Include" />
+                <e p="Scriptable Objects" t="Include">
+                  <e p="MAST_Core_ScriptableObject.cs" t="Include" />
+                  <e p="MAST_GUI_ScriptableObject.cs" t="Include" />
+                  <e p="MAST_Hotkey_ScriptableObject.cs" t="Include" />
+                  <e p="MAST_Placement_ScriptableObject.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Shared" t="Include">
+                <e p="MAST_Asset_Loader.cs" t="Include" />
+                <e p="MAST_Const.cs" t="Include" />
+              </e>
+              <e p="Tools" t="Include">
+                <e p="MAST_MergeMeshes.cs" t="Include" />
+                <e p="MAST_Prefab_Creator.cs" t="Include" />
+                <e p="MAST_PrepModels.cs" t="Include" />
+                <e p="MAST_SubMeshSplitter.cs" t="Include" />
+                <e p="MAST_Tools_Window.cs" t="Include" />
+              </e>
+            </e>
+            <e p="updates.txt" t="Include" />
+          </e>
+        </e>
+        <e p="resource" t="Include">
+          <e p="Animated Robot by Quaternius" t="Include">
+            <e p="License.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Player" t="Include">
+            <e p="CameraLook.cs" t="Include" />
+            <e p="Player.cs" t="Include" />
+            <e p="PlayerControl.cs" t="Include" />
+            <e p="PlayerControlNoJump.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="RobotBuddies.sln" t="IncludeFlat" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
