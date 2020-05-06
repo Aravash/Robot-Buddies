@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerControl : Player
 {
-    public GameObject cube;
+    public GameObject validBuildBot;
+    public GameObject invalidBuildBot;
     private bool canBuild = false;
     private Vector3 buildLoc;
     public GameObject[] robot;
@@ -70,20 +71,28 @@ public class PlayerControl : Player
         // Does the ray intersect any objects except the player
         if (Physics.Raycast(camera.transform.position, camera.forward, out hit, 5f, layerMask))
         {
-            cube.SetActive(true);
-            cube.transform.position = hit.point;
             buildLoc = hit.point;
             if (hit.transform.CompareTag("worldBuildable"))
             {
                 canBuild = true;
+                invalidBuildBot.SetActive(false);
+                validBuildBot.SetActive(true);
+                validBuildBot.transform.position = hit.point;
             }
             else
             {
                 canBuild = false;
+                validBuildBot.SetActive(false);
+                invalidBuildBot.SetActive(true);
+                invalidBuildBot.transform.position = hit.point;
             }
             Debug.DrawRay(camera.transform.position, camera.forward * hit.distance, Color.yellow);
         }
-        else cube.SetActive(false);
+        else
+        {
+            validBuildBot.SetActive(false);
+            invalidBuildBot.SetActive(false);
+        }
     }
 
     /*
@@ -104,7 +113,7 @@ public class PlayerControl : Player
                 Debug.Log("BOT deployed.");
                 bot.SetActive(true);
                 bot.transform.position = buildLoc;
-                bot.transform.rotation = cube.transform.rotation;
+                bot.transform.rotation = validBuildBot.transform.rotation;
                 break;
             }
         }
