@@ -53,6 +53,10 @@ public class PlayerControl : Player
         }
     }
     
+    /*
+     * render a hologram robot if you are looking at
+     * a surface you can build on
+     */
     void LookSpot()
     {
         //TODO:: compartmentalize raycast into function that takes in raycast parameters
@@ -82,6 +86,9 @@ public class PlayerControl : Player
         else cube.SetActive(false);
     }
 
+    /*
+     * If you can build, build a robot to that location
+     */
     void BuildBot()
     {
         if (!canBuild) return;
@@ -103,6 +110,9 @@ public class PlayerControl : Player
         }
     }
 
+    /*
+     * destroy a robot you are looking at
+     */
     void BreakBot()
     {
         if (Input.GetKeyDown(KeyCode.Mouse1))

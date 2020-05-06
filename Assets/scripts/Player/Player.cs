@@ -40,7 +40,8 @@ public class Player : MonoBehaviour
         jones = GetComponent<CharacterController>();
     }
     
-    
+    //take input from both horizontal and vertical, X and Z in the world and make it input.
+    //clamp input to maximum value of 1
     protected virtual void GetInput()
     {
         input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
@@ -48,6 +49,10 @@ public class Player : MonoBehaviour
         input = Vector2.ClampMagnitude(input, 1);
     }
 
+    /*
+     * take camera positions and convert them into variables for
+     * this script to use
+     */
     protected void CalculateCamera()
     {
         camF = camera.forward;
@@ -59,6 +64,12 @@ public class Player : MonoBehaviour
         camR = camR.normalized;
     }
 
+    /*
+     * fire a raycast directly down from the centre of the player
+     * if it hits something then you are on the ground
+     * consider adding more raycasts for the edge of the player
+     * or use a spherecast
+     */
     protected void CalculateGround()
     {
         RaycastHit hit;
@@ -72,9 +83,11 @@ public class Player : MonoBehaviour
         }
 
         Debug.DrawRay(transform.position+Vector3.up*0.1f, -Vector3.up *hit.distance, Color.yellow);
-        //Debug.Log($"Grounded is {grounded}");
     }
 
+    /*
+     * change velocity based on input and camera angle
+     */
     protected void MovePlane()
     {
         intent = camF * input.y + camR * input.x;
@@ -90,6 +103,11 @@ public class Player : MonoBehaviour
         velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
     }
 
+    /*
+     * manual gravity, Players do not use physics.
+     * clamp maximum y velocity change to 10 units either way
+     * consider changing the clamp limits when adding jump pads that send you very high
+     */
     protected void Gravity()
     {
         if (grounded)
@@ -104,6 +122,9 @@ public class Player : MonoBehaviour
         velocity.y = Mathf.Clamp(velocity.y, -10, 10);
     }
 
+    /*
+     * change velocity when you jump.
+     */
     protected void Jump()
     {
         if(grounded)

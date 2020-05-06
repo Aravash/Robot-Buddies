@@ -12,17 +12,19 @@ public class CameraLook : MonoBehaviour
     private float currentDist = 0;
     private float topicHeight = 1;
     public Vector2 input;
-    public GameObject codec;
+    public Animator codecAnim;
     private bool playerActive = true;
     public GameObject[] robots;
 
     [HideInInspector]
     public bool in2D = false;
 
+    private static readonly int IsEquipped = Animator.StringToHash("isEquipped");
+
+    //maybe want to move cursor stuff and mouse raycasts to a new script on the codec/robot controller obj?
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        codec.SetActive(false);
         currentDist = camDist;
     }
 
@@ -50,6 +52,10 @@ public class CameraLook : MonoBehaviour
     // will always change after the player position changes.
     // this avoids potential desync on lower framerates
     
+    /*
+     * change player state between using codec/robot controller
+     * to moving and placing/picking up bots
+     */
     void StateSwitch()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -57,18 +63,22 @@ public class CameraLook : MonoBehaviour
             if (playerActive)
             {
                 playerActive = false;
-                codec.SetActive(true);
+                codecAnim.SetBool(IsEquipped, true);
                 Cursor.lockState = CursorLockMode.None;
             }
             else
             {
                 playerActive = true;
-                codec.SetActive(false);
+                codecAnim.SetBool(IsEquipped, false);
                 Cursor.lockState = CursorLockMode.Locked;
             }
         }
     }
 
+    /*
+     * pushing buttons on the codec. only supports the two turn buttons
+     * Should also add ability to swap screens into the main view by clicking on them
+     */
     void PushButton()
     {
         Debug.Log("Polling PushButton");
@@ -95,6 +105,10 @@ public class CameraLook : MonoBehaviour
         }
     }
 
+    /*
+     * rotates the robots on the Y axis.
+     * change - the degree by which to rotate
+     */
     void RotateBot(float change)
     {
         foreach (GameObject bot in robots)
@@ -115,6 +129,9 @@ public class CameraLook : MonoBehaviour
         input = Vector2.ClampMagnitude(input, 1);
     }
 
+    /*
+     * moves camera based on input variable
+     */
     private void MoveCam()
     {
         if (input.magnitude > 0)
