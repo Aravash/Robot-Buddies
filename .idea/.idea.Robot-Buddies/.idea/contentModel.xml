@@ -72,6 +72,9 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="codec" t="Include">
+            <e p="ToggleLight.cs" t="Include" />
+          </e>
           <e p="Player" t="Include">
             <e p="CameraLook.cs" t="Include" />
             <e p="Player.cs" t="Include" />

@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     //Gravity
     private float grav = 9.81f;
     private bool grounded = false;
-    public float halfPlayerHeight = 1.1f;
+    public float halfPlayerHeight = 1.05f;
 
     protected void PlayerStart()
     {
@@ -124,13 +124,16 @@ public class Player : MonoBehaviour
 
     /*
      * change velocity when you jump.
+     * TODO: fix this function. The player does not seem to jump, something to do with grounded raycast I think
      */
     protected void Jump()
     {
         if(grounded)
         {
+            Debug.Log("Grounded for Jump");
             if (Input.GetButtonDown("Jump"))
             {
+                Debug.Log("Jump input");
                 velocity.y = 6;
                 //14 degrees is highest angle we can still jump on slopes
                 //issue with raycast length in CalculateGround
