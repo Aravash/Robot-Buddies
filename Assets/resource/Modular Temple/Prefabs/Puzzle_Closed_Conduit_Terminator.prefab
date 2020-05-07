@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2830900810439639070}
   m_Layer: 0
   m_Name: object1
-  m_TagString: Untagged
+  m_TagString: worldBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
