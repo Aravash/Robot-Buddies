@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: MAST_Interface_State
   m_EditorClassIdentifier: 
   gridExists: 0
-  selectedDrawToolIndex: -1
+  selectedDrawToolIndex: 0
   selectedItemIndex: -1
-  lastPrefabPath: C:/Users/jacob/Desktop/KRAKEN/RobotBuddies/Assets/resource/Modular
+  lastPrefabPath: C:/Users/jacob/Desktop/KRAKEN/Robot-Buddies/Assets/resource/Modular
     Temple
   prefabs:
   - {fileID: 1438351373286217392, guid: db0649e17b6606740ba015971d0d9ff5, type: 3}

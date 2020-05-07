@@ -15,9 +15,9 @@ public class CameraLook : MonoBehaviour
     public Animator codecAnim;
     private bool playerActive = true;
     public GameObject[] robots;
-
-    [HideInInspector]
-    public bool in2D = false;
+    
+    //how many degrees to rotate per second
+    public float rotateSpeed = 45;
 
     private static readonly int IsEquipped = Animator.StringToHash("isEquipped");
 
@@ -81,10 +81,8 @@ public class CameraLook : MonoBehaviour
      */
     void PushButton()
     {
-        Debug.Log("Polling PushButton");
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
-            Debug.Log("Mouse0 pressed");
             int layerMask = 1 << 10;
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -93,13 +91,11 @@ public class CameraLook : MonoBehaviour
             {
                 if (hit.transform.gameObject.CompareTag("leftButton"))
                 {
-                    Debug.Log("Selected Left Component");
-                    RotateBot(-15);
+                    RotateBot(-rotateSpeed);
                 }
                 else if (hit.transform.gameObject.CompareTag("rightButton"))
                 {
-                    Debug.Log("Selected Right Component");
-                    RotateBot(+15);
+                    RotateBot(rotateSpeed);
                 }
             }
         }
@@ -115,7 +111,7 @@ public class CameraLook : MonoBehaviour
         {
             if (!bot.activeSelf) continue;
             //to add two quaternions together you multiply them. I say frick to quaternions
-            bot.transform.Rotate(0, change, 0);
+            bot.transform.Rotate(0, change * Time.deltaTime, 0);
         }
     }
     
