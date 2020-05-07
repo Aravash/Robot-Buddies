@@ -5,13 +5,13 @@ using UnityEngine;
 public class ToggleLight : MonoBehaviour
 {
     public GameObject relatedBot;
-    public float lightIntensity = 2;
-    private new Light light;
+    public Material[] mats;
+    private new Renderer renderer;
     
     // Start is called before the first frame update
     void Start()
     {
-        light = GetComponent<Light>();
+        renderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -19,11 +19,11 @@ public class ToggleLight : MonoBehaviour
     {
         if (relatedBot.activeSelf)
         {
-            light.intensity = lightIntensity;
+            renderer.material = mats[0];
         }
         else
         {
-            light.intensity = 0;
+            renderer.material = mats[1];
         }
     }
 }

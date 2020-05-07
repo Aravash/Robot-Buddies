@@ -50,7 +50,16 @@ public class PlayerControl : Player
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            activePlayer = !activePlayer;
+            if (activePlayer)
+            {
+                activePlayer = false;
+                validBuildBot.SetActive(false);
+                invalidBuildBot.SetActive(false);
+            }
+            else
+            {
+                activePlayer = true;
+            }
         }
     }
     

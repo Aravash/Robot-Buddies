@@ -72,6 +72,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Button.cs" t="Include" />
           <e p="codec" t="Include">
             <e p="ToggleLight.cs" t="Include" />
           </e>
