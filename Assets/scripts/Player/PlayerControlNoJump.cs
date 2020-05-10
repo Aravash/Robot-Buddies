@@ -7,6 +7,8 @@ public class PlayerControlNoJump : Player
     private Animator animator;
     private static readonly int Moving = Animator.StringToHash("moving");
     private bool activeBot = false;
+    [SerializeField]
+    private bool disabled = true; 
 
     void Start()
     {
@@ -16,11 +18,11 @@ public class PlayerControlNoJump : Player
     }
     void Update()
     {
-        StateSwitch();
+        if (disabled) return;
+
+            StateSwitch();
         if(activeBot)
         {
-
-
             GetInput();
 
             Animate();
@@ -32,15 +34,15 @@ public class PlayerControlNoJump : Player
             MovePlane();
             //currently robot does not move when out of robot controller
             //Need to fix this somehow
-            Gravity();
-            
-            jones.Move(velocity * Time.deltaTime);
-            
         }
         else
         {
             velocity = new Vector3(0, velocity.y, 0);
         }
+        
+        Gravity();
+            
+        jones.Move(velocity * Time.deltaTime);
     }
 
     /*
@@ -78,5 +80,26 @@ public class PlayerControlNoJump : Player
         {
             animator.SetBool(Moving, false);
         }
+    }
+
+    public bool IsDisabled()
+    {
+        return disabled;
+    }
+
+    public void DisableBot()
+    {
+        disabled = true;
+        transform.position = Vector3.zero;
+        camera.gameObject.SetActive(false);
+    }
+    
+    public void EnableBot(Vector3 pos, Quaternion rot)
+    {
+        disabled = false;
+        var transform1 = transform;
+        transform1.position = pos;
+        transform1.rotation = rot;
+        camera.gameObject.SetActive(true);
     }
 }

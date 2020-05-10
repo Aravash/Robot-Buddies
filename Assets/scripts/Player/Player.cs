@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
         }
         velocityXZ = velocity;
         velocityXZ.y = 0;
-        velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * input.magnitude * speed, accel*Time.deltaTime);
+        velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * (input.magnitude * speed), accel*Time.deltaTime);
         velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
     }
 
@@ -116,6 +116,7 @@ public class Player : MonoBehaviour
         }
         else
         {
+            Debug.Log("falling");
             velocity.y -= grav * Time.deltaTime;
         }
 

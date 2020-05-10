@@ -115,14 +115,13 @@ public class PlayerControl : Player
         {
             foreach (GameObject bot in robot)
             {
-                if (bot.activeSelf)
+                PlayerControlNoJump script = bot.GetComponent<PlayerControlNoJump>();
+                if (!script.IsDisabled())
                 {
                     continue;
                 }
                 Debug.Log("BOT deployed.");
-                bot.SetActive(true);
-                bot.transform.position = buildLoc;
-                bot.transform.rotation = validBuildBot.transform.rotation;
+                script.EnableBot(buildLoc, validBuildBot.transform.rotation);
                 break;
             }
         }
@@ -148,7 +147,7 @@ public class PlayerControl : Player
                 Debug.DrawRay(camera.transform.position, camera.forward * hit.distance, Color.red);
                 if (hit.transform.CompareTag("robot"))
                 {
-                    hit.transform.gameObject.SetActive(false);
+                    hit.transform.gameObject.GetComponent<PlayerControlNoJump>().DisableBot();
                     Debug.Log("BOT removed.");
                 }
             }
