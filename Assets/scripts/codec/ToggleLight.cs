@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ToggleLight : MonoBehaviour
 {
-    public GameObject relatedBot;
+    public PlayerControlNoJump relatedBot;
     public Material[] mats;
     private new Renderer renderer;
     
@@ -17,13 +17,13 @@ public class ToggleLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (relatedBot.activeSelf)
+        if (relatedBot.IsDisabled())
         {
-            renderer.material = mats[0];
+            renderer.material = mats[1];
         }
         else
         {
-            renderer.material = mats[1];
+            renderer.material = mats[0];
         }
     }
 }

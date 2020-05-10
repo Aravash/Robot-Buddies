@@ -16,12 +16,13 @@ public class PlayerControlNoJump : Player
         animator = GetComponent<Animator>();
         speed = 2;
     }
+
     void Update()
     {
         if (disabled) return;
 
-            StateSwitch();
-        if(activeBot)
+        StateSwitch();
+        if (activeBot)
         {
             GetInput();
 
@@ -32,31 +33,30 @@ public class PlayerControlNoJump : Player
             CalculateGround();
 
             MovePlane();
-            //currently robot does not move when out of robot controller
-            //Need to fix this somehow
+            //currently robot does not move (via gravity) when out of robot controller
+            //Need to fix this somehow without having robot deploy issue
+            Gravity();
+
+            jones.Move(velocity * Time.deltaTime);
         }
         else
         {
             velocity = new Vector3(0, velocity.y, 0);
         }
-        
-        Gravity();
-            
-        jones.Move(velocity * Time.deltaTime);
-    }
 
-    /*
-     * enable/disable bots when switching into/out of bot mode
-     */
-    void StateSwitch()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        /*
+         * enable/disable bots when switching into/out of bot mode
+         */
+        void StateSwitch()
         {
-            activeBot = !activeBot;
-            animator.SetBool(Moving, false);
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                activeBot = !activeBot;
+                animator.SetBool(Moving, false);
+            }
         }
     }
-    
+
     /*
      * get input only on the z axis of the world.
      */
