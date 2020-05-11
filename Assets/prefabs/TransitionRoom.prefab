@@ -19,6 +19,85 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &3867499272770767565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8294836945350459517}
+  - component: {fileID: 2949599501700362732}
+  - component: {fileID: 1905480669834620617}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8294836945350459517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867499272770767565}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: -3.991, y: 1.38, z: -4.97}
+  m_LocalScale: {x: 0.3, y: 1, z: 0.3}
+  m_Children: []
+  m_Father: {fileID: 7321033855765234759}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -90.00001}
+--- !u!33 &2949599501700362732
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867499272770767565}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1905480669834620617
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867499272770767565}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: bf9fabb331bbfdb44925fe1c200dd5f5, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!95 &8745788424176948932
 Animator:
   serializedVersion: 3
@@ -77,6 +156,7 @@ Transform:
   - {fileID: 2044406956371122645}
   - {fileID: 2044406956646868821}
   - {fileID: 6166300440128328910}
+  - {fileID: 8294836945350459517}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -196,16 +276,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7321033855765234759}
     m_Modifications:
-    - target: {fileID: 6566087994553804159, guid: b69016e08792e7d40b1df730b6bc1af5,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall_Straight_Door_Large_Pocket
-      objectReference: {fileID: 0}
-    - target: {fileID: 6566087994553804159, guid: b69016e08792e7d40b1df730b6bc1af5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8513508826843741339, guid: b69016e08792e7d40b1df730b6bc1af5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -260,6 +330,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566087994553804159, guid: b69016e08792e7d40b1df730b6bc1af5,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall_Straight_Door_Large_Pocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566087994553804159, guid: b69016e08792e7d40b1df730b6bc1af5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3510606730742154256, guid: b69016e08792e7d40b1df730b6bc1af5,
         type: 3}
@@ -362,11 +442,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7321033855765234759}
     m_Modifications:
-    - target: {fileID: 3958528469972113726, guid: 958ebb8ad24fff145b795a13b94f8447,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall_Straight_Doorway_Large_Pocket
-      objectReference: {fileID: 0}
     - target: {fileID: 1839598156776360021, guid: 958ebb8ad24fff145b795a13b94f8447,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -422,6 +497,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3958528469972113726, guid: 958ebb8ad24fff145b795a13b94f8447,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall_Straight_Doorway_Large_Pocket
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958ebb8ad24fff145b795a13b94f8447, type: 3}
 --- !u!4 &8943613700047895063 stripped
@@ -437,16 +517,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7321033855765234759}
     m_Modifications:
-    - target: {fileID: 8566485783623198679, guid: faa7847e01e599249aebd87795d96bc4,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall_Straight_Door_Large
-      objectReference: {fileID: 0}
-    - target: {fileID: 8566485783623198679, guid: faa7847e01e599249aebd87795d96bc4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3461737682520955511, guid: faa7847e01e599249aebd87795d96bc4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -501,6 +571,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8566485783623198679, guid: faa7847e01e599249aebd87795d96bc4,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall_Straight_Door_Large
+      objectReference: {fileID: 0}
+    - target: {fileID: 8566485783623198679, guid: faa7847e01e599249aebd87795d96bc4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faa7847e01e599249aebd87795d96bc4, type: 3}
@@ -673,11 +753,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7321033855765234759}
     m_Modifications:
-    - target: {fileID: 3958528469972113726, guid: 958ebb8ad24fff145b795a13b94f8447,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall_Straight_Doorway_Large_Pocket
-      objectReference: {fileID: 0}
     - target: {fileID: 1839598156776360021, guid: 958ebb8ad24fff145b795a13b94f8447,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -732,6 +807,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958528469972113726, guid: 958ebb8ad24fff145b795a13b94f8447,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall_Straight_Doorway_Large_Pocket
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958ebb8ad24fff145b795a13b94f8447, type: 3}
