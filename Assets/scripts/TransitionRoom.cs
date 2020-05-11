@@ -6,10 +6,9 @@ using UnityEngine;
 public class TransitionRoom : MonoBehaviour
 {
     public Animator[] doorAnim;
-    public PlayerControlNoJump[] robots;
     private static readonly int IsOpen = Animator.StringToHash("isOpen");
 
-    public float waitTime = 2f;
+    public float waitTime = 4f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,13 +28,6 @@ public class TransitionRoom : MonoBehaviour
     private IEnumerator transition()
     {
         doorAnim[0].SetBool(IsOpen, false);
-        yield return new WaitForSeconds(2);
-
-        foreach (PlayerControlNoJump robot in robots)
-        {
-            robot.DisableBot();
-        }
-        
         yield return new WaitForSeconds(waitTime);
         doorAnim[1].SetBool(IsOpen, true);
         

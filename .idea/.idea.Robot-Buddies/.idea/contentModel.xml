@@ -70,12 +70,18 @@
           <e p="Animated Robot by Quaternius" t="Include">
             <e p="License.txt" t="Include" />
           </e>
+          <e p="Shader" t="Include">
+            <e p="OverwatchShield.shader" t="Include" />
+            <e p="RenderDepthTexture.cs" t="Include" />
+            <e p="Rotate.cs" t="Include" />
+          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="Button.cs" t="Include" />
           <e p="codec" t="Include">
             <e p="ToggleLight.cs" t="Include" />
           </e>
+          <e p="DestroyBot.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="CameraLook.cs" t="Include" />
             <e p="Player.cs" t="Include" />

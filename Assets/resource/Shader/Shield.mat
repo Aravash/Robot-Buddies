@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EdgeTex:
-        m_Texture: {fileID: 2800000, guid: 140c6106449653646b5af4e149074584, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6e4c9ec469001cb4cb46d68365c0d158, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -84,9 +84,9 @@ Material:
     - _DstBlend: 0
     - _EdgeCycleModifier: 1.5
     - _EdgeDistanceModifier: 50
-    - _EdgeExponent: 10
+    - _EdgeExponent: 1
     - _EdgeFalloffExp: 5
-    - _EdgeIntensity: 0
+    - _EdgeIntensity: 2
     - _EdgePulseIntensity: 10
     - _EdgeWidthModifier: 0.984
     - _GlossMapScale: 1
@@ -106,7 +106,7 @@ Material:
     - _Parallax: 0.02
     - _PulseCycleModifier: 1
     - _PulseDistanceModifier: 10
-    - _PulseIntensity: 5
+    - _PulseIntensity: 1
     - _PulsePosScale: 50
     - _PulseTexOffsetScale: 1.5
     - _PulseTextureModifier: 0.5
@@ -123,8 +123,8 @@ Material:
     - _UseUIAlphaClip: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.99824667, b: 0.8254717, a: 0.2}
+    - _Color: {r: 0.03137255, g: 0.28235295, b: 0.5294118, a: 0.2}
     - _EdgePulseColor: {r: 1, g: 0.2973367, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlowColor: {r: 1, g: 0.29803923, b: 0, a: 1}
-    - _HexEdgeColor: {r: 0, g: 0, b: 0, a: 0}
+    - _HexEdgeColor: {r: 0.9764706, g: 0.67058825, b: 0.33333334, a: 1}

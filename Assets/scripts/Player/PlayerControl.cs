@@ -24,8 +24,6 @@ public class PlayerControl : Player
 
             CalculateCamera();
 
-            CalculateGround();
-
             MovePlane();
 
             Jump();
@@ -41,8 +39,10 @@ public class PlayerControl : Player
             velocity = new Vector3(0, velocity.y, 0);
         }
 
+        CalculateGround();
+        
         Gravity();
-            
+
         jones.Move(velocity * Time.deltaTime);
     }
 
@@ -120,7 +120,6 @@ public class PlayerControl : Player
                 {
                     continue;
                 }
-                Debug.Log("BOT deployed.");
                 script.EnableBot(buildLoc, validBuildBot.transform.rotation);
                 break;
             }
@@ -148,7 +147,6 @@ public class PlayerControl : Player
                 if (hit.transform.CompareTag("robot"))
                 {
                     hit.transform.gameObject.GetComponent<PlayerControlNoJump>().DisableBot();
-                    Debug.Log("BOT removed.");
                 }
             }
         }

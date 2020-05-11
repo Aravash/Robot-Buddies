@@ -116,6 +116,7 @@ public class Player : MonoBehaviour
         }
         else
         {
+            Debug.Log("increasing y velocity");
             velocity.y -= grav * Time.deltaTime;
         }
 
