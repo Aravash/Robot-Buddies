@@ -86,6 +86,7 @@
               <e p="PlayerMovement.cs" t="Include" />
             </e>
           </e>
+          <e p="TransitionRoom.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

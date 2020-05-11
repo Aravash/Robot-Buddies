@@ -15,6 +15,7 @@ public class CameraLook : MonoBehaviour
     public Animator codecAnim;
     private bool playerActive = true;
     public GameObject[] robots;
+    public Camera codecCam;
     
     //how many degrees to rotate per second
     public float rotateSpeed = 45;
@@ -85,8 +86,8 @@ public class CameraLook : MonoBehaviour
         {
             int layerMask = 1 << 10;
             RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
+            Ray ray = codecCam.ScreenPointToRay(Input.mousePosition);
+            
             if (Physics.Raycast(ray, out hit, 100f, layerMask))
             {
                 if (hit.transform.gameObject.CompareTag("leftButton"))

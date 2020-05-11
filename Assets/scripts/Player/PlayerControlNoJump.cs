@@ -90,7 +90,7 @@ public class PlayerControlNoJump : Player
     public void DisableBot()
     {
         disabled = true;
-        transform.position = Vector3.zero;
+        transform.position = new Vector3(0, -10, 0);
         camera.gameObject.SetActive(false);
     }
     
