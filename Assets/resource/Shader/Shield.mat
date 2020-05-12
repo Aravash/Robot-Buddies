@@ -127,4 +127,4 @@ Material:
     - _EdgePulseColor: {r: 1, g: 0.2973367, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlowColor: {r: 1, g: 0.29803923, b: 0, a: 1}
-    - _HexEdgeColor: {r: 0.9764706, g: 0.67058825, b: 0.33333334, a: 1}
+    - _HexEdgeColor: {r: 1, g: 0.5243903, b: 0, a: 1}

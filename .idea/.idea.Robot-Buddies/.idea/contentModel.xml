@@ -86,7 +86,9 @@
             <e p="CameraLook.cs" t="Include" />
             <e p="Player.cs" t="Include" />
             <e p="PlayerControl.cs" t="Include" />
-            <e p="PlayerControlNoJump.cs" t="Include" />
+            <e p="Robot" t="Include">
+              <e p="PlayerControlNoJump.cs" t="Include" />
+            </e>
             <e p="test" t="Include">
               <e p="MouseLook.cs" t="Include" />
               <e p="PlayerMovement.cs" t="Include" />

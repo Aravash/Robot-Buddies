@@ -113,6 +113,7 @@ public class PlayerControl : Player
         
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            Debug.Log("Build Button press");
             foreach (GameObject bot in robot)
             {
                 PlayerControlNoJump script = bot.GetComponent<PlayerControlNoJump>();
