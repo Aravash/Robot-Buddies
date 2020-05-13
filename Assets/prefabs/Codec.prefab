@@ -488,7 +488,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9e8a0811dca404545b40aed55c14e64f, type: 2}
+  - {fileID: 2781410738928257789, guid: c7736521491765a45a140231460c96c7, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -784,6 +784,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5810855726557851349}
+  - component: {fileID: 2682325918554736335}
   m_Layer: 8
   m_Name: Codec
   m_TagString: Untagged
@@ -817,6 +818,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2682325918554736335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7421676712948178118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39d9117ab1d9d824fad35a7de276ac5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  codecCams:
+  - {fileID: 4585321847236057713}
+  - {fileID: 626934099731330184}
+  - {fileID: 6178693699896483691}
+  - {fileID: 9209393358263927879}
+  robots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  robotCam:
+  - {fileID: 2100000, guid: fb83a18dc27f6a543bd3a42da3c13949, type: 2}
+  - {fileID: 2100000, guid: c7faf6c3c69eda74bb1bc52483499cad, type: 2}
+  - {fileID: 2100000, guid: d5f9e0f229eb81a46bdaeb74defdd38b, type: 2}
+  - {fileID: 2100000, guid: e2e65832e3e44124b95f7992c7cab3a9, type: 2}
+  offScreen: {fileID: 2100000, guid: 220f6ded7b430d4448b6dc1e00b0fa95, type: 2}
 --- !u!1 &7628045890861721004
 GameObject:
   m_ObjectHideFlags: 0

@@ -81,6 +81,7 @@
           <e p="codec" t="Include">
             <e p="ToggleLight.cs" t="Include" />
           </e>
+          <e p="codecCam.cs" t="Include" />
           <e p="DestroyBot.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="CameraLook.cs" t="Include" />
