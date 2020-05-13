@@ -12,42 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5fd28d118e3f54681cbd57341ebc04, type: 3}
   m_Name: MAST_Interface_State
   m_EditorClassIdentifier: 
-  gridExists: 1
+  gridExists: 0
   selectedDrawToolIndex: -1
   selectedItemIndex: -1
-  lastPrefabPath: C:/Users/jacob/Desktop/KRAKEN/Robot-Buddies/Assets/resource/CustomModels
-  prefabs:
-  - {fileID: 3936879894751491597, guid: ef36c7b2ab53af44f9ce4af3fdaaba1d, type: 3}
-  - {fileID: 1893355971373065288, guid: 3dde172da258e1a46ab6fff1025549a8, type: 3}
-  - {fileID: 8478736372969818864, guid: ac7a170efe74a304b8402cecdb7f40d3, type: 3}
-  - {fileID: 8837559774506146388, guid: 0744ee529c503944da9f35d722db53b3, type: 3}
-  - {fileID: 4241060333956656685, guid: 2904c6cd40925924facf11eca4be628c, type: 3}
-  - {fileID: 3496282771526514996, guid: a91dafddce93fd9419786ce1b1ba9587, type: 3}
-  - {fileID: 2939163709124904345, guid: e6dde0fdb303a4e48a4328d6b84f2530, type: 3}
-  - {fileID: 6825353370557442530, guid: d692eeb9bbe855e4bb2b69ec18007341, type: 3}
-  - {fileID: 6948269957558377741, guid: b0e85bc480a36b148a856597baac5479, type: 3}
-  - {fileID: 1284589524503415549, guid: d0398f9d676487442a5b5ec4e88c764b, type: 3}
-  - {fileID: 2299927405511804192, guid: 3b021eca0df1aca468409c123b34a07f, type: 3}
-  - {fileID: 1737340337480523380, guid: 26457f7b0d8fdac4ab16040727de45df, type: 3}
-  - {fileID: 7706751216739418227, guid: d28ccad446bda5f41b68cc8ca2e703c3, type: 3}
-  - {fileID: 1182506463670753929, guid: 9a57c8065a4bfd149b1ca977d638bcd3, type: 3}
-  - {fileID: 3114983498296540416, guid: 0cc83a659b6d64845b253cb994f3e85c, type: 3}
-  - {fileID: 4380412211559083770, guid: 819165a9dc33cff4a9dd79da25de39e7, type: 3}
-  paletteItemTooltip:
-  - Button
-  - Door
-  - DoorBig
-  - Floor
-  - FloorRamp
-  - FloorWireBend
-  - FloorWireSource
-  - FloorWireStraight
-  - Wall
-  - WallDoorWay
-  - WallDoorWayBig
-  - WallWireBend
-  - WallWirePassThrough
-  - WallWirePoint
-  - WallWireStraight
-  - WireConnector
+  lastPrefabPath: Assets
+  prefabs: []
+  paletteItemTooltip: []
   columnCount: 3
