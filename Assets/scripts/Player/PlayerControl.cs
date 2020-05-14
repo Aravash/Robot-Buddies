@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,12 @@ public class PlayerControl : Player
     void Update()
     {
         StateSwitch();
+        
+        //below two MUST be before Jump() for jumping to work
+        CalculateGround();
+            
+        Gravity();
+        
         if (activePlayer)
         {
             GetInput();
@@ -38,11 +45,7 @@ public class PlayerControl : Player
         {
             velocity = new Vector3(0, velocity.y, 0);
         }
-
-        CalculateGround();
         
-        Gravity();
-
         jones.Move(velocity * Time.deltaTime);
     }
 
@@ -62,7 +65,7 @@ public class PlayerControl : Player
             }
         }
     }
-    
+
     /*
      * render a hologram robot if you are looking at
      * a surface you can build on

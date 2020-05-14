@@ -32,8 +32,9 @@ public class Player : MonoBehaviour
 
     //Gravity
     private float grav = 9.81f;
-    private bool grounded = false;
+    protected bool grounded = false;
     public float halfPlayerHeight = 1.05f;
+    public float jumpForce = 3;
 
     protected void PlayerStart()
     {
@@ -132,7 +133,8 @@ public class Player : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump"))
             {
-                velocity.y = 6;
+                Debug.Log("jumpInput");
+                velocity.y = jumpForce;
                 //14 degrees is highest angle we can still jump on slopes
                 //issue with raycast length in CalculateGround
                 //doesnt work when descending slopes
