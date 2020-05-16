@@ -26,7 +26,9 @@
           <e p="Door.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="CameraLook.cs" t="Include" />
+            <e p="Orb.cs" t="Include" />
             <e p="Player.cs" t="Include" />
+            <e p="PlayerAltControl.cs" t="Include" />
             <e p="PlayerControl.cs" t="Include" />
             <e p="Robot" t="Include">
               <e p="PlayerControlNoJump.cs" t="Include" />
