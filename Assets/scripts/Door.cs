@@ -11,9 +11,9 @@ public class Door : MonoBehaviour
     // Movement speed in units per second.
     public float speed = 1.0F;
 
-    private static bool isOpen = false; //default: false
+    private bool isOpen = false; //default: false
 
-    public static void SetOpen(bool state)
+    public void SetOpen(bool state)
     {
         isOpen = state;
     }

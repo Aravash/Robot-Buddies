@@ -6,7 +6,7 @@ using UnityEngine.Experimental.XR;
 
 public class Button : MonoBehaviour
 {
-    public Door door;
+    public Door powerTarget;
     public Renderer[] wireRenderer;
     public Material[] wireMat;
     private static readonly int IsOpen = Animator.StringToHash("isOpen");
@@ -30,7 +30,7 @@ public class Button : MonoBehaviour
                 renderer.material = wireMat[matType];
             }
 
-            Door.SetOpen(outcome);
+            powerTarget.SetOpen(outcome);
         }
     }
 }
