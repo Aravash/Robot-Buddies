@@ -29,7 +29,7 @@ public class Door : MonoBehaviour
         else
         {
             // Set our position as a fraction of the distance between the markers.
-            transform.position = Vector3.Lerp(transform.position, closedPos.position, speed);
+            transform.position = Vector3.Lerp(transform.position, closedPos.position, speed * Time.deltaTime);
         }
     }
 }
