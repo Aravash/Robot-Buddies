@@ -10,7 +10,7 @@ public class CameraLook : MonoBehaviour
     private float tilt = 0;
     private float camDist = 0;
     private float currentDist = 0;
-    private float topicHeight = 1;
+    public float topicHeight = .5f;
     public Vector2 input;
     public Animator codecAnim;
     private bool playerActive = true;

@@ -13,6 +13,7 @@ public class Orb : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward, ForceMode.Impulse);
         layerMask = ~layerMask;
     }
 

@@ -59,7 +59,15 @@ public class PlayerAltControl : Player
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Debug.Log("Build Button press");
+            // Bit shift the index of the layer (8) to get a bit mask
+            int layerMask = 1 << 8;
+
+            //invert layer bitmask
+            layerMask = ~layerMask;
+
+            if (Physics.Raycast(camera.transform.position, camera.forward, 1f, layerMask)) return;
+            
+            Debug.Log("Hit Nothing, building bot");
             GameObject obj = Instantiate(Orb, orbSpawnPoint.position, orbSpawnPoint.rotation);
             obj.GetComponent<Orb>().SetBots(ref robot);
         }
