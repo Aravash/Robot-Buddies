@@ -47,13 +47,14 @@ public class PlayerControlNoJump : Player
         /*
          * enable/disable bots when switching into/out of bot mode
          */
-        void StateSwitch()
+    }
+    
+    void StateSwitch()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            if (Input.GetKeyDown(KeyCode.LeftControl))
-            {
-                activeBot = !activeBot;
-                animator.SetBool(Moving, false);
-            }
+            activeBot = !activeBot;
+            animator.SetBool(Moving, false);
         }
     }
 

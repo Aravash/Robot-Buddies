@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Orb : MonoBehaviour
 {
+    public float force = 2f;
     public float halfHeight = .3f;
     private Rigidbody rb;
     private PlayerControlNoJump[] robots = new PlayerControlNoJump[4];
@@ -13,7 +14,7 @@ public class Orb : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward, ForceMode.Impulse);
+        rb.AddForce(transform.forward * force, ForceMode.Impulse);
         layerMask = ~layerMask;
     }
 
@@ -31,6 +32,7 @@ public class Orb : MonoBehaviour
         CheckGrounded();
     }
 
+    //if grounded then spawn in the next unspawned robot
     void CheckGrounded()
     {
         RaycastHit hit;
@@ -43,8 +45,8 @@ public class Orb : MonoBehaviour
                 {
                     continue;
                 }
-                //ideally its the Y rot of the orb and not quat.identity
-                script.EnableBot(transform.position, Quaternion.identity);
+                var transform1 = transform;
+                script.EnableBot(transform1.position, Quaternion.Euler(0, transform1.eulerAngles.y, 0));
                 break;
             }
             Destroy(gameObject);
