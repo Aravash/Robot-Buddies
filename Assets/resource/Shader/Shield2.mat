@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shield
+  m_Name: Shield2
   m_Shader: {fileID: 4800000, guid: 3d6621da8047d014e865496f82f3c177, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EdgeTex:
-        m_Texture: {fileID: 2800000, guid: 6e4c9ec469001cb4cb46d68365c0d158, type: 3}
+        m_Texture: {fileID: 10307, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -94,10 +94,10 @@ Material:
     - _GlossyReflections: 1
     - _GlowIntensity: 5000
     - _GlowRange: 0.0629
-    - _HexEdgeIntensity: 1
-    - _HexEdgePosScale: 160
+    - _HexEdgeIntensity: 20
+    - _HexEdgePosScale: 12
     - _HexEdgeTimeScale: 3
-    - _HexEdgeWidthModifier: 0.3
+    - _HexEdgeWidthModifier: 0
     - _IntersectFalloffExp: 50
     - _IntersectIntensity: 50
     - _Metallic: 0
@@ -107,10 +107,10 @@ Material:
     - _PulseCycleModifier: 1
     - _PulseDistanceModifier: 10
     - _PulseIntensity: 2
-    - _PulsePosScale: 0
+    - _PulsePosScale: 2
     - _PulseTexOffsetScale: 10
     - _PulseTextureModifier: 0.5
-    - _PulseTimeScale: 1
+    - _PulseTimeScale: 0.3
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -123,8 +123,8 @@ Material:
     - _UseUIAlphaClip: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.54082924, b: 0, a: 0.15686275}
+    - _Color: {r: 0.18867922, g: 0, b: 0, a: 0.15686275}
     - _EdgePulseColor: {r: 1, g: 0.2973367, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlowColor: {r: 1, g: 0.29803923, b: 0, a: 1}
-    - _HexEdgeColor: {r: 1, g: 1, b: 1, a: 0}
+    - _HexEdgeColor: {r: 0.9339623, g: 0, b: 0.02715509, a: 0.9372549}
