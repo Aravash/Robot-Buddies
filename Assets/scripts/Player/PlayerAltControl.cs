@@ -8,6 +8,7 @@ public class PlayerAltControl : Player
     public GameObject Orb;
     public PlayerControlNoJump[] robot;
     private bool activePlayer = true;
+    public bool hasCodec = false;
 
     void Start()
     {
@@ -15,8 +16,11 @@ public class PlayerAltControl : Player
     }
     void Update()
     {
-        StateSwitch();
-        
+        if (hasCodec)
+        {
+            StateSwitch();
+        }
+
         //below two MUST be before Jump() for jumping to work
         CalculateGround();
             
@@ -31,10 +35,13 @@ public class PlayerAltControl : Player
             MovePlane();
 
             Jump();
+            
+            if (hasCodec)
+            {
+                BuildBot();
 
-            BuildBot();
-
-            BreakBot();
+                BreakBot();
+            }
         }
         else
         {

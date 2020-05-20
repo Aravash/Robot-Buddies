@@ -24,6 +24,7 @@
           <e p="codecCam.cs" t="Include" />
           <e p="DestroyBot.cs" t="Include" />
           <e p="Door.cs" t="Include" />
+          <e p="PickupCodec.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="CameraLook.cs" t="Include" />
             <e p="Orb.cs" t="Include" />
