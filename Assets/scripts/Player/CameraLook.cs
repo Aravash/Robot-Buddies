@@ -16,9 +16,10 @@ public class CameraLook : MonoBehaviour
     private bool playerActive = true;
     public GameObject[] robots;
     public Camera codecCam;
+    public bool hasCodec = false;
     
     //how many degrees to rotate per second
-    public float rotateSpeed = 45;
+    public float rotateSpeed = 90;
 
     private static readonly int IsEquipped = Animator.StringToHash("isEquipped");
 
@@ -31,7 +32,10 @@ public class CameraLook : MonoBehaviour
 
     private void Update()
     {
-        StateSwitch();
+        if (hasCodec)
+        {
+            StateSwitch();
+        }
 
         if (!playerActive)
         {
