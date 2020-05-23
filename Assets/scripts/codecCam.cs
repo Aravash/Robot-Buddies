@@ -24,4 +24,15 @@ public class codecCam : MonoBehaviour
             }
         }
     }
+
+    public void SwapScreen(GameObject screen)
+    {
+        Renderer render = screen.GetComponent<Renderer>();
+        
+        if (render.material == offScreen) return;
+        Debug.Log("material is not offScreen");
+        Material mat = codecCams[0].material;
+        codecCams[0].material = render.material;
+        render.material = mat;
+    }
 }

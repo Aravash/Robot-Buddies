@@ -12,7 +12,9 @@ public class CameraLook : MonoBehaviour
     private float currentDist = 0;
     public float topicHeight = .5f;
     public Vector2 input;
-    public Animator codecAnim;
+    public GameObject codec;
+    private codecCam codecScript;
+    private Animator codecAnim;
     private bool playerActive = true;
     public GameObject[] robots;
     public Camera codecCam;
@@ -27,6 +29,8 @@ public class CameraLook : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        codecAnim = codec.GetComponent<Animator>();
+        codecScript = codec.GetComponent<codecCam>();
         currentDist = camDist;
     }
 
@@ -83,16 +87,26 @@ public class CameraLook : MonoBehaviour
     /*
      * pushing buttons on the codec. only supports the two turn buttons
      * Should also add ability to swap screens into the main view by clicking on them
+     * god this is ugly
      */
     void PushButton()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        int layerMask = 1 << 10;
+        RaycastHit hit;
+        Ray ray = codecCam.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, 10f, layerMask))
         {
-            int layerMask = 1 << 10;
-            RaycastHit hit;
-            Ray ray = codecCam.ScreenPointToRay(Input.mousePosition);
-            
-            if (Physics.Raycast(ray, out hit, 100f, layerMask))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                if (hit.transform.gameObject.CompareTag("Screen"))
+                {
+                    Debug.Log("hit screen");
+                    codecScript.SwapScreen(hit.transform.gameObject);
+                }
+            }
+
+            if (Input.GetKey(KeyCode.Mouse0))
             {
                 if (hit.transform.gameObject.CompareTag("leftButton"))
                 {

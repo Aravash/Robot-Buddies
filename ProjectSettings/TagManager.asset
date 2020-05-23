@@ -9,6 +9,7 @@ TagManager:
   - robot
   - rightButton
   - leftButton
+  - Screen
   layers:
   - Default
   - TransparentFX

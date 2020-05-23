@@ -20,7 +20,7 @@ public class TriggerVoiceLine : MonoBehaviour
             if(other.CompareTag("Player"))
         {
             dir.PlayLine(voiceLineNumber);
-            hasPlayed = false;
+            hasPlayed = true;
         }
     }
 }
