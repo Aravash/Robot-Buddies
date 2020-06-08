@@ -70,16 +70,20 @@ public class Player : MonoBehaviour
      * if it hits something then you are on the ground
      * consider adding more raycasts for the edge of the player
      * or use a spherecast
+     * NOT WORK WITH SPHERECAST for some reason
      */
     protected void CalculateGround()
     {
+        Vector3 offset = transform.position;
         RaycastHit hit;
-        if(Physics.Raycast(transform.position+Vector3.up*0.1f, -Vector3.up, out hit, halfPlayerHeight))
+        
+        if(Physics.Raycast(offset+Vector3.up*0.1f, -Vector3.up, out hit, halfPlayerHeight))
         {
             grounded = true;
         }
         else
         {
+            Debug.Log("not grounded");
             grounded = false;
         }
 

@@ -36,20 +36,20 @@ public class PlayerControlNoJump : Player
             //currently robot does not move (via gravity) when out of robot controller
             //Need to fix this somehow without having robot deploy issue
             Gravity();
-
+            
             jones.Move(velocity * Time.deltaTime);
         }
         else
         {
             velocity = new Vector3(0, velocity.y, 0);
         }
-
-        /*
-         * enable/disable bots when switching into/out of bot mode
-         */
+       
     }
     
-    void StateSwitch()
+    /*
+     * enable/disable bots when switching into/out of bot mode
+     */
+    private void StateSwitch()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -99,10 +99,10 @@ public class PlayerControlNoJump : Player
     
     public void EnableBot(Vector3 pos, Quaternion rot)
     {
-        disabled = false;
         var transform1 = transform;
         transform1.position = pos;
         transform1.rotation = rot;
         camera.gameObject.SetActive(true);
+        disabled = false;
     }
 }
