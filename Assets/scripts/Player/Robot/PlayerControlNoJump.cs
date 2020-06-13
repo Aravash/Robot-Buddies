@@ -6,7 +6,7 @@ public class PlayerControlNoJump : Player
 {
     private Animator animator;
     private static readonly int Moving = Animator.StringToHash("moving");
-    private bool activeBot = false;
+    public bool activeBot = false;
     [SerializeField]
     private bool disabled = true; 
 

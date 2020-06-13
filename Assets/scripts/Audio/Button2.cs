@@ -16,7 +16,7 @@ public class Button2 : MonoBehaviour
         ChangeState(ref other, false, 1);
         if (!firstTimePressed) return;
         firstTimePressed = false;
-        dir.PlayLine(1);
+        //dir.PlayLine(1);
     }
 
     private void OnTriggerExit(Collider other)

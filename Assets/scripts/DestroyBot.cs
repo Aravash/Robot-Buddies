@@ -14,7 +14,7 @@ public class DestroyBot : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             robots[i] = botObj[i].GetComponent<PlayerControlNoJump>();
-            Debug.Log("Assigned a robot's script");
+            //Debug.Log("Assigned a robot's script");
         }
     }
 

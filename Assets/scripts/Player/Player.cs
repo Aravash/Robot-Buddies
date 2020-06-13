@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Debug.Log("not grounded");
+            //Debug.Log("not grounded");
             grounded = false;
         }
 

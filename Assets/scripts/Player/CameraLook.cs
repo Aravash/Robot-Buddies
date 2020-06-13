@@ -74,12 +74,14 @@ public class CameraLook : MonoBehaviour
                 playerActive = false;
                 codecAnim.SetBool(IsEquipped, true);
                 Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
             else
             {
                 playerActive = true;
                 codecAnim.SetBool(IsEquipped, false);
                 Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
         }
     }

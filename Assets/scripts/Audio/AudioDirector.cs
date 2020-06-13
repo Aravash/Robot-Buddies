@@ -19,14 +19,17 @@ public class AudioDirector : MonoBehaviour
 
     private IEnumerator Intro()
     {
+        yield return new WaitForSeconds(4);
         PlayLine(0);
-        yield return new WaitForSeconds(28);
+        yield return new WaitForSeconds(10);
         wall[0].SetOpen(true);
         yield return new WaitForSeconds(2);
+        PlayLine(1);
         mechArmAnim[0].enabled = true;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(9.5f);
         wall[1].SetOpen(true);
         yield return new WaitForSeconds(2);
+        PlayLine(2);
         demoBot.SetParent(null);
         mechArmAnim[1].enabled = true;
     }
