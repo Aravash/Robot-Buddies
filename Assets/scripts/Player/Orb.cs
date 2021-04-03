@@ -8,7 +8,7 @@ public class Orb : MonoBehaviour
     public float halfHeight = .3f;
     private Rigidbody rb;
     private PlayerControlNoJump[] robots = new PlayerControlNoJump[4];
-    int layerMask = 1 << 8;
+    int layerMask = 1 << 12;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +36,7 @@ public class Orb : MonoBehaviour
     void CheckGrounded()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, -Vector3.up, out hit, halfHeight))
+        if (Physics.Raycast(transform.position, -Vector3.up, out hit, halfHeight, layerMask))
         {
             Debug.DrawRay(transform.position+Vector3.up*0.1f, -Vector3.up *hit.distance, Color.yellow, layerMask);
             foreach (PlayerControlNoJump script in robots)

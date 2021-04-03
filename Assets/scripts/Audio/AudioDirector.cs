@@ -10,9 +10,12 @@ public class AudioDirector : MonoBehaviour
     public Transform demoBot;
     public AudioClip[] voiceLines;
     private AudioSource source;
+    public static AudioDirector instance;
 
     private void Start()
     {
+        if(instance == null) instance = this;
+        else Destroy(this);
         source = GetComponent<AudioSource>();
         StartCoroutine(Intro());
     }

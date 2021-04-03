@@ -11,7 +11,6 @@ public class TriggerVoiceLine : MonoBehaviour
 
     private void Start()
     {
-        dir = GetComponentInParent<AudioDirector>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -19,7 +18,7 @@ public class TriggerVoiceLine : MonoBehaviour
         if (hasPlayed) return;
             if(other.CompareTag("Player"))
         {
-            dir.PlayLine(voiceLineNumber);
+            AudioDirector.instance.PlayLine(voiceLineNumber);
             hasPlayed = true;
         }
     }

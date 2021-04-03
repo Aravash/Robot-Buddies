@@ -8,7 +8,9 @@ public class PlayerControlNoJump : Player
     private static readonly int Moving = Animator.StringToHash("moving");
     public bool activeBot = false;
     [SerializeField]
-    private bool disabled = true; 
+    private bool disabled = true;
+
+    public bool playerHasCodec = false;
 
     void Start()
     {
@@ -51,7 +53,7 @@ public class PlayerControlNoJump : Player
      */
     private void StateSwitch()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && playerHasCodec)
         {
             activeBot = !activeBot;
             animator.SetBool(Moving, false);

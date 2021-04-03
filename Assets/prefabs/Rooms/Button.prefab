@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4406498138028386930}
   - component: {fileID: 2468091569060389094}
   - component: {fileID: 1976111714693349255}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ab5a7590d30984ea4644b1bd33fbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 0}
+  powerTarget: {fileID: 0}
   wireRenderer:
   - {fileID: 616112474974037988}
   - {fileID: 7099744912923602824}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 3493364467395911360}
   - component: {fileID: 7099744912923602824}
   - component: {fileID: 4453085327791270948}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wire
   m_TagString: Untagged
   m_Icon: {fileID: 0}

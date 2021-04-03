@@ -23,7 +23,7 @@ TagManager:
   - buildableZone
   - CodecComponent
   - Codec
-  - 
+  - IgnoreBuild
   - 
   - 
   - 
