@@ -24,15 +24,13 @@ public class AudioDirector : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
         PlayLine(0);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(8);
         wall[0].SetOpen(true);
         yield return new WaitForSeconds(2);
-        PlayLine(1);
         mechArmAnim[0].enabled = true;
-        yield return new WaitForSeconds(9.5f);
+        yield return new WaitForSeconds(3);
         wall[1].SetOpen(true);
         yield return new WaitForSeconds(2);
-        PlayLine(2);
         demoBot.SetParent(null);
         mechArmAnim[1].enabled = true;
     }

@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
 
     // rate of acceleration and deceleration when
     // beginning and ending movement is based on this value
-    private float accel = 5;
+    [SerializeField]private float acceleration = 20;
 
     //rate of rotation
     private float turnSpeed = 20;
@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
         }
         velocityXZ = velocity;
         velocityXZ.y = 0;
-        velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * (input.magnitude * speed), accel*Time.deltaTime);
+        velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * (input.magnitude * speed), acceleration*Time.deltaTime);
         velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
     }
 
