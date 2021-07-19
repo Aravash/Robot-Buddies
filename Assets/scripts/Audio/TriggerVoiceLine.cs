@@ -9,10 +9,6 @@ public class TriggerVoiceLine : MonoBehaviour
     public int voiceLineNumber = 0;
     private bool hasPlayed = false;
 
-    private void Start()
-    {
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (hasPlayed) return;
