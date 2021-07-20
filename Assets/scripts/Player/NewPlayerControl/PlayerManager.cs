@@ -22,6 +22,13 @@ public class PlayerManager : MonoBehaviour
     {
         if (instance != null) Destroy(this);
         else instance = this;
+
+        int i = 0;
+        foreach (var Bot in instance.Robots)
+        {
+            Bot.GetComponent<RobotController>().SetIndexPosition(i);
+            i++;
+        }
     }
 
     // Update is called once per frame

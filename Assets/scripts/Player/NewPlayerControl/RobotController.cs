@@ -6,6 +6,7 @@ public class RobotController : Player
 {
     private Animator animator;
     private static readonly int Moving = Animator.StringToHash("moving");
+    private int index_position;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class RobotController : Player
         }
         else
         {
+            input.y = 0;
             velocity = new Vector3(0, velocity.y, 0);
         }
     }
@@ -63,5 +65,15 @@ public class RobotController : Player
         {
             animator.SetBool(Moving, false);
         }
+    }
+
+    public void SetIndexPosition(int newpos)
+    {
+        index_position = newpos;
+    }
+    
+    public int GetIndexPosition()
+    {
+        return index_position;
     }
 }

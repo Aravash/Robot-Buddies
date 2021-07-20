@@ -80,8 +80,7 @@ public class PlayerController : Player
                 Debug.DrawRay(camera.transform.position, camera.forward * hit.distance, Color.red);
                 if (hit.transform.CompareTag("robot"))
                 {
-                    int robot_number = 0;
-                    //get the robot's position in the playerManager List of Robots
+                    int robot_number = hit.transform.GetComponent<RobotController>().GetIndexPosition();
                     PlayerManager.instance.DisableRobot(robot_number);
                     PlayerManager.instance.PlaceRobot(robot_number, Vector3.zero, Quaternion.identity);
                 }
