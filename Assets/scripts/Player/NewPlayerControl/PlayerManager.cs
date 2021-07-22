@@ -15,6 +15,15 @@ public class PlayerManager : MonoBehaviour
     [Tooltip("If using the codec, the robots are moved, else the player is moved")]
     public bool using_codec = false;
 
+    public enum UI_state
+    {
+        OUT_OF_CODEC,
+        USING_CODEC,
+        ESCAPE_MENU
+    }
+
+    public UI_state current_ui_state;
+
     [SerializeField]
     private GameObject[] Robots = new GameObject[4];
 
@@ -37,25 +46,47 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        handleEscapeMenu();
+        
         if (!has_codec) return;
 
         if (Input.GetButtonDown("ToggleCodecView"))
         {
             using_codec = !using_codec;
-            handleCursor();
+            handleCursorAndUI();
+            handleCodec();
+        }
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            using_codec = false;
+            handleCursorAndUI();
             handleCodec();
         }
     }
 
-    private void handleCursor()
+    private void handleEscapeMenu()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if (current_ui_state == UI_state.ESCAPE_MENU)
+            {
+                current_ui_state = UI_state.OUT_OF_CODEC;
+            }
+        }
+    }
+    
+    private void handleCursorAndUI()
     {
         if (using_codec)
         {
+            current_ui_state = UI_state.USING_CODEC;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
         else
         {
+            current_ui_state = UI_state.OUT_OF_CODEC;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
