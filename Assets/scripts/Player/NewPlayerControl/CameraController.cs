@@ -70,7 +70,7 @@ public class CameraController : MonoBehaviour
         RaycastHit hit;
         Ray ray = codec_cam.ScreenPointToRay(Input.mousePosition);
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             if (Physics.Raycast(ray, out hit, 10f, layerMask))
             {
