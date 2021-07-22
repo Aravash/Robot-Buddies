@@ -33,6 +33,8 @@
           <e p="Player" t="Include">
             <e p="CameraLook.cs" t="Include" />
             <e p="NewPlayerControl" t="Include">
+              <e p="CameraController.cs" t="Include" />
+              <e p="CodecController.cs" t="Include" />
               <e p="DeployBot.cs" t="Include" />
               <e p="PlayerController.cs" t="Include" />
               <e p="PlayerManager.cs" t="Include" />

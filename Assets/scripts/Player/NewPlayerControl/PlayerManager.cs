@@ -18,6 +18,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private GameObject[] Robots = new GameObject[4];
 
+    [SerializeField] private Animator codec_anim;
+    private static readonly int IsEquipped = Animator.StringToHash("isEquipped");
+
     void Awake()
     {
         if (instance != null) Destroy(this);
@@ -38,10 +41,32 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetButtonDown("ToggleCodecView"))
         {
-            using_codec = !using_codec; 
+            using_codec = !using_codec;
+            handleCursor();
+            handleCodec();
         }
     }
 
+    private void handleCursor()
+    {
+        if (using_codec)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
+
+    private void handleCodec()
+    {
+        if(using_codec) codec_anim.SetBool(IsEquipped, true);
+        else codec_anim.SetBool(IsEquipped, false);
+    }
+    
     //place the robot before enabling it, and disable it before placing it.
     public void PlaceRobot(int robot_number, Vector3 new_location, Quaternion new_rotation)
     {
@@ -57,6 +82,20 @@ public class PlayerManager : MonoBehaviour
     public void DisableRobot(int robot_number)
     {
         instance.Robots[robot_number].SetActive(false);
+    }
+
+    public bool IsCurrentRobotEnabled(int robot_number)
+    {
+        return instance.Robots[robot_number].activeSelf;
+    }
+
+    public void rotateRobots(float change)
+    {
+        foreach (var Bot in instance.Robots)
+        {
+            if (!Bot.activeSelf) continue;
+            Bot.transform.Rotate(0, change * Time.deltaTime, 0);
+        }
     }
 
     public int GetFirstInactiveRobotIndex()
