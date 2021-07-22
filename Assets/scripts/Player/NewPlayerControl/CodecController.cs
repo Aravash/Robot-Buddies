@@ -13,7 +13,6 @@ public class CodecController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         for (int i = 0; i < 4; i++)
         {
             if (PlayerManager.instance.IsCurrentRobotEnabled(i))

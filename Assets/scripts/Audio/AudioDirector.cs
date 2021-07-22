@@ -31,7 +31,7 @@ public class AudioDirector : MonoBehaviour
         yield return new WaitForSeconds(3);
         wall[1].SetOpen(true);
         yield return new WaitForSeconds(2);
-        demoBot.SetParent(null);
+        demoBot.SetParent(PlayerManager.instance.transform.parent);
         mechArmAnim[1].enabled = true;
     }
 

@@ -5,33 +5,25 @@ using UnityEngine;
 public class DestroyBot : MonoBehaviour
 {
     
-    public PlayerControlNoJump[] robots;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        GameObject[] botObj = GameObject.FindGameObjectsWithTag("robot");
-        for (int i = 0; i < 4; i++)
-        {
-            robots[i] = botObj[i].GetComponent<PlayerControlNoJump>();
-            //Debug.Log("Assigned a robot's script");
-        }
-    }
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player entered destroyZone");
-            foreach (PlayerControlNoJump robot in robots)
+            for (int i = 0; i < 4; i++)
             {
-                robot.DisableBot();
+                PlayerManager.instance.DisableRobot(i);
+                PlayerManager.instance.PlaceRobot(i, Vector3.zero, Quaternion.identity);
             }
         }
         else if (other.CompareTag("robot"))
         {
             Debug.Log("Bot entered destroyZone");
             other.GetComponent<PlayerControlNoJump>().DisableBot();
+            int robot_number = other.GetComponent<RobotController>().GetIndexPosition();
+            PlayerManager.instance.DisableRobot(robot_number);
+            PlayerManager.instance.PlaceRobot(robot_number, Vector3.zero, Quaternion.identity);
         }
     }
 }

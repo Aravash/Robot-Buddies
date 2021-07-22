@@ -36,6 +36,7 @@
               <e p="CameraController.cs" t="Include" />
               <e p="CodecController.cs" t="Include" />
               <e p="DeployBot.cs" t="Include" />
+              <e p="HideCodec.cs" t="Include" />
               <e p="PlayerController.cs" t="Include" />
               <e p="PlayerManager.cs" t="Include" />
               <e p="RobotController.cs" t="Include" />
