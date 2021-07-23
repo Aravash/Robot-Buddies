@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class DestroyBot : MonoBehaviour
 {
-    
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
