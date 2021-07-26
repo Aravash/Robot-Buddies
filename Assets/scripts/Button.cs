@@ -13,11 +13,13 @@ public class Button : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        ReliableOnTriggerExit.NotifyTriggerEnter(other, gameObject, OnTriggerExit);
         changeState(ref other, true, 1);
     }
 
     private void OnTriggerExit(Collider other)
     {
+        ReliableOnTriggerExit.NotifyTriggerExit(other, gameObject);
         changeState(ref other, false, 0);
     }
 

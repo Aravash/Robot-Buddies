@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,14 +14,15 @@ public class Button2 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        ReliableOnTriggerExit.NotifyTriggerEnter(other, gameObject, OnTriggerExit);
         ChangeState(ref other, false, 1);
         if (!firstTimePressed) return;
         firstTimePressed = false;
-        //dir.PlayLine(1);
     }
 
     private void OnTriggerExit(Collider other)
     {
+        ReliableOnTriggerExit.NotifyTriggerExit(other, gameObject);
         ChangeState(ref other, true, 0);
     }
 

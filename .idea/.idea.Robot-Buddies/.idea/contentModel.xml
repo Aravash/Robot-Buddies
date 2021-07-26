@@ -63,6 +63,9 @@
           </e>
           <e p="Teleporter.cs" t="Include" />
           <e p="TransitionRoom.cs" t="Include" />
+          <e p="TriggerDisableFix" t="Include">
+            <e p="ReliableOnTriggerExit.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
             <e p="ButtonPressPromptUI.cs" t="Include" />
             <e p="PromptUIElement.cs" t="Include" />
