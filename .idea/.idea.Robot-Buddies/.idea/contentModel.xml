@@ -32,6 +32,23 @@
           <e p="PickupCodec.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="CameraLook.cs" t="Include" />
+            <e p="NewPlayerControl" t="Include">
+              <e p="CameraController.cs" t="Include" />
+              <e p="CodecController.cs" t="Include" />
+              <e p="DeployBot.cs" t="Include" />
+              <e p="HideCodec.cs" t="Include" />
+              <e p="loading" t="Include">
+                <e p="LoadAndUnloadArea.cs" t="Include" />
+              </e>
+              <e p="platform" t="Include">
+                <e p="Parenter.cs" t="Include" />
+                <e p="RobotKiller.cs" t="Include" />
+              </e>
+              <e p="PlayerController.cs" t="Include" />
+              <e p="PlayerManager.cs" t="Include" />
+              <e p="RobotController.cs" t="Include" />
+              <e p="UIToggle.cs" t="Include" />
+            </e>
             <e p="Orb.cs" t="Include" />
             <e p="Player.cs" t="Include" />
             <e p="PlayerAltControl.cs" t="Include" />
@@ -46,6 +63,9 @@
           </e>
           <e p="Teleporter.cs" t="Include" />
           <e p="TransitionRoom.cs" t="Include" />
+          <e p="TriggerDisableFix" t="Include">
+            <e p="ReliableOnTriggerExit.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
             <e p="ButtonPressPromptUI.cs" t="Include" />
             <e p="PromptUIElement.cs" t="Include" />

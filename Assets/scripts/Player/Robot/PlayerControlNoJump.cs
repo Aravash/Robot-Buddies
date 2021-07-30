@@ -53,7 +53,7 @@ public class PlayerControlNoJump : Player
      */
     private void StateSwitch()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl) && playerHasCodec)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && playerHasCodec) // change to getbuttondown("ToggleCodecView")
         {
             activeBot = !activeBot;
             animator.SetBool(Moving, false);

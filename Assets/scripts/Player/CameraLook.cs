@@ -19,6 +19,7 @@ public class CameraLook : MonoBehaviour
     public GameObject[] robots;
     public Camera codecCam;
     public bool hasCodec = false;
+    public float sensitivity = 180;
     
     //how many degrees to rotate per second
     public float rotateSpeed = 90;
@@ -153,9 +154,9 @@ public class CameraLook : MonoBehaviour
     {
         if (input.magnitude > 0)
         {
-            tilt += Input.GetAxis("Mouse Y") * Time.deltaTime * 180;
+            tilt += Input.GetAxis("Mouse Y") * Time.deltaTime * sensitivity;
 
-            heading += Input.GetAxis("Mouse X") * Time.deltaTime * 180;
+            heading += Input.GetAxis("Mouse X") * Time.deltaTime * sensitivity;
 
             tilt = Mathf.Clamp(tilt, -90, 90);
         }
