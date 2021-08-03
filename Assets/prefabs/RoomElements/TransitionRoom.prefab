@@ -26,11 +26,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22a24491c0a42c44b17efdc84724af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  robots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &4009680405940235066
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,9 +479,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.9764706, g: 0.67058825, b: 0.3372549, a: 1}
+  m_Color: {r: 0.5647059, g: 0.6117647, b: 0.7607843, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -527,7 +522,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 2
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
