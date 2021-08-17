@@ -17,7 +17,7 @@ public class DestroyBot : MonoBehaviour
         else if (other.CompareTag("robot"))
         {
             Debug.Log("Bot entered destroyZone");
-            other.GetComponent<PlayerControlNoJump>().DisableBot();
+            //other.GetComponent<PlayerControlNoJump>().DisableBot();
             int robot_number = other.GetComponent<RobotController>().GetIndexPosition();
             PlayerManager.instance.DisableRobot(robot_number);
             PlayerManager.instance.PlaceRobot(robot_number, Vector3.zero, Quaternion.identity);
