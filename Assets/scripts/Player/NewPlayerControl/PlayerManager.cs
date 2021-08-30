@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -48,7 +49,7 @@ public class PlayerManager : MonoBehaviour
     {
         handleEscapeMenu();
         
-        if (!has_codec) return;
+        if (!has_codec && current_ui_state != UI_state.ESCAPE_MENU) return;
 
         if (Input.GetButtonDown("ToggleCodecView"))
         {
@@ -59,9 +60,12 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetButtonDown("Cancel"))
         {
-            using_codec = false;
-            handleCursorAndUI();
-            handleCodec();
+            if (using_codec)
+            {
+                using_codec = false;
+                handleCursorAndUI();
+                handleCodec();
+            }
         }
     }
 
@@ -71,22 +75,42 @@ public class PlayerManager : MonoBehaviour
         {
             if (current_ui_state == UI_state.ESCAPE_MENU)
             {
-                current_ui_state = UI_state.OUT_OF_CODEC;
+                ExitEscapeMenu();
+            }
+            else
+            {
+                Time.timeScale = 0;
+                current_ui_state = UI_state.ESCAPE_MENU;
+                UIToggle.instance.changeUIState(current_ui_state);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
+    }
+
+    public void ExitEscapeMenu()
+    {
+        Time.timeScale = 1;
+        current_ui_state = UI_state.OUT_OF_CODEC;
+        UIToggle.instance.changeUIState(current_ui_state);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     
     private void handleCursorAndUI()
     {
+        Debug.Log("just called handlecusorandUI");
         if (using_codec)
         {
             current_ui_state = UI_state.USING_CODEC;
+            UIToggle.instance.changeUIState(current_ui_state);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
         else
         {
             current_ui_state = UI_state.OUT_OF_CODEC;
+            UIToggle.instance.changeUIState(current_ui_state);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
