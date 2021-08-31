@@ -10,6 +10,8 @@ public class PlayerManager : MonoBehaviour
 
     public static PlayerManager instance;
 
+    [SerializeField] private AudioSource speaking_voice;
+    
     [Tooltip("The player does not start with the codec")]
     public bool has_codec = false;
     
@@ -77,9 +79,10 @@ public class PlayerManager : MonoBehaviour
             {
                 ExitEscapeMenu();
             }
-            else
+            else // enter escape menu
             {
                 Time.timeScale = 0;
+                speaking_voice.Pause();
                 current_ui_state = UI_state.ESCAPE_MENU;
                 UIToggle.instance.changeUIState(current_ui_state);
                 Cursor.lockState = CursorLockMode.None;
@@ -91,6 +94,7 @@ public class PlayerManager : MonoBehaviour
     public void ExitEscapeMenu()
     {
         Time.timeScale = 1;
+        speaking_voice.UnPause();
         current_ui_state = UI_state.OUT_OF_CODEC;
         UIToggle.instance.changeUIState(current_ui_state);
         Cursor.lockState = CursorLockMode.Locked;
@@ -99,7 +103,6 @@ public class PlayerManager : MonoBehaviour
     
     private void handleCursorAndUI()
     {
-        Debug.Log("just called handlecusorandUI");
         if (using_codec)
         {
             current_ui_state = UI_state.USING_CODEC;

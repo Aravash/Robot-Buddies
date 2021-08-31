@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIToggle : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class UIToggle : MonoBehaviour
     {
         if (instance != null) Destroy(this);
         else instance = this;
+        
+        PlayerManager.instance.ExitEscapeMenu();
     }
 
     public void changeUIState(PlayerManager.UI_state state)
@@ -45,6 +48,6 @@ public class UIToggle : MonoBehaviour
 
     public void EndTest()
     {
-        //exit to the main menu
+        SceneManager.LoadScene("Scenes/MainMenu");
     }
 }
