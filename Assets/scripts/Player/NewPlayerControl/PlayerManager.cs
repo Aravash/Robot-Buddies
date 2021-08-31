@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public class PlayerManager : MonoBehaviour
 {
 
     public static PlayerManager instance;
 
+    [SerializeField] private AudioSource speaking_voice;
+    
     [Tooltip("The player does not start with the codec")]
     public bool has_codec = false;
     
@@ -48,7 +51,7 @@ public class PlayerManager : MonoBehaviour
     {
         handleEscapeMenu();
         
-        if (!has_codec) return;
+        if (!has_codec && current_ui_state != UI_state.ESCAPE_MENU) return;
 
         if (Input.GetButtonDown("ToggleCodecView"))
         {
@@ -59,9 +62,12 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetButtonDown("Cancel"))
         {
-            using_codec = false;
-            handleCursorAndUI();
-            handleCodec();
+            if (using_codec)
+            {
+                using_codec = false;
+                handleCursorAndUI();
+                handleCodec();
+            }
         }
     }
 
@@ -71,9 +77,28 @@ public class PlayerManager : MonoBehaviour
         {
             if (current_ui_state == UI_state.ESCAPE_MENU)
             {
-                current_ui_state = UI_state.OUT_OF_CODEC;
+                ExitEscapeMenu();
+            }
+            else // enter escape menu
+            {
+                Time.timeScale = 0;
+                speaking_voice.Pause();
+                current_ui_state = UI_state.ESCAPE_MENU;
+                UIToggle.instance.changeUIState(current_ui_state);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
+    }
+
+    public void ExitEscapeMenu()
+    {
+        Time.timeScale = 1;
+        speaking_voice.UnPause();
+        current_ui_state = UI_state.OUT_OF_CODEC;
+        UIToggle.instance.changeUIState(current_ui_state);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     
     private void handleCursorAndUI()
@@ -81,12 +106,14 @@ public class PlayerManager : MonoBehaviour
         if (using_codec)
         {
             current_ui_state = UI_state.USING_CODEC;
+            UIToggle.instance.changeUIState(current_ui_state);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
         else
         {
             current_ui_state = UI_state.OUT_OF_CODEC;
+            UIToggle.instance.changeUIState(current_ui_state);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }

@@ -1,16 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIToggle : MonoBehaviour
 {
+    
+    public static UIToggle instance;
+    
     [SerializeField]
     private GameObject[] UI_views = new GameObject[3];
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        switch (PlayerManager.instance.current_ui_state)
+        if (instance != null) Destroy(this);
+        else instance = this;
+        
+        PlayerManager.instance.ExitEscapeMenu();
+    }
+
+    public void changeUIState(PlayerManager.UI_state state)
+    {
+        switch (state)
         {
             case PlayerManager.UI_state.ESCAPE_MENU: 
                 UI_views[0].SetActive(true);
@@ -28,5 +39,15 @@ public class UIToggle : MonoBehaviour
                 UI_views[2].SetActive(true);
                 break;
         }
+    }
+
+    public void ContinueTest()
+    {
+        PlayerManager.instance.ExitEscapeMenu();
+    }
+
+    public void EndTest()
+    {
+        SceneManager.LoadScene("Scenes/MainMenu");
     }
 }
