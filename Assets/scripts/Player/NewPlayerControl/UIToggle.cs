@@ -15,7 +15,10 @@ public class UIToggle : MonoBehaviour
     {
         if (instance != null) Destroy(this);
         else instance = this;
-        
+    }
+
+    void Start()
+    {
         PlayerManager.instance.ExitEscapeMenu();
     }
 
