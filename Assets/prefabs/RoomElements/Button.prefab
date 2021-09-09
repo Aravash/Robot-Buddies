@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bd6d5ad8018603c4c8a7bd858725924e, type: 2}
+  - {fileID: 2100000, guid: 5d62d446d82a13a4aaa3ad1ea495d852, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   - {fileID: 616112474974037988}
   - {fileID: 7099744912923602824}
   wireMat:
-  - {fileID: 2100000, guid: bd6d5ad8018603c4c8a7bd858725924e, type: 2}
+  - {fileID: 2100000, guid: 5d62d446d82a13a4aaa3ad1ea495d852, type: 2}
   - {fileID: 2100000, guid: 58cbf1b11d5c5e04bbd83d674fdf366a, type: 2}
 --- !u!114 &4406498138028386930
 MonoBehaviour:
@@ -409,7 +409,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bd6d5ad8018603c4c8a7bd858725924e, type: 2}
+  - {fileID: 2100000, guid: 5d62d446d82a13a4aaa3ad1ea495d852, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
