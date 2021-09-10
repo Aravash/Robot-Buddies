@@ -19,6 +19,8 @@ public class CameraController : MonoBehaviour
     private float tilt = 0;
     public float topicHeight = 0.5f;
     [SerializeField]private float sensitivity = float.MaxValue;
+
+    [SerializeField] private CodecController codecScript;
     
     // Start is called before the first frame update
     private void Start()
@@ -73,7 +75,25 @@ public class CameraController : MonoBehaviour
         if (Input.GetButton("Fire1"))
         {
             if (Physics.Raycast(ray, out hit, 10f, layerMask))
-            {
+                switch (hit.transform.gameObject.tag)
+                {
+                    case "leftButton":
+                        PlayerManager.instance.rotateRobots(-rotateSpeed);
+                        break;
+                    case "rightButton":
+                        PlayerManager.instance.rotateRobots(rotateSpeed);
+                        break;
+                    case "Screen2":
+                        codecScript.swapScreenMaterial(0,1);
+                        break;
+                    case "Screen3":
+                        codecScript.swapScreenMaterial(0,2);
+                        break;
+                    case "Screen4":
+                        codecScript.swapScreenMaterial(0,3);
+                        break;
+                }
+                /*
                 if (hit.transform.gameObject.CompareTag("leftButton"))
                 {
                     PlayerManager.instance.rotateRobots(-rotateSpeed);
@@ -82,10 +102,10 @@ public class CameraController : MonoBehaviour
                 {
                     PlayerManager.instance.rotateRobots(rotateSpeed);
                 }
-            }
+                */
         }
     }
-    
+
     void GetInput()
     {
         input = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));

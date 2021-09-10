@@ -27,4 +27,12 @@ public class CodecController : MonoBehaviour
             }
         }
     }
+    
+    public void swapScreenMaterial(int screenPos1, int screenPos2)
+    {
+        Material temp = codecCams[screenPos1].material;
+        codecCams[screenPos1].material = codecCams[screenPos2].material;
+        codecCams[screenPos2].material = temp;
+        Debug.Log("swapping screen");
+    }
 }

@@ -10,6 +10,9 @@ TagManager:
   - rightButton
   - leftButton
   - Screen
+  - Screen2
+  - Screen3
+  - Screen4
   layers:
   - Default
   - TransparentFX
