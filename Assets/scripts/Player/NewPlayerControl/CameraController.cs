@@ -21,6 +21,8 @@ public class CameraController : MonoBehaviour
     [SerializeField]private float sensitivity = float.MaxValue;
 
     [SerializeField] private CodecController codecScript;
+
+    private bool buttonPressed = false;
     
     // Start is called before the first frame update
     private void Start()
@@ -84,25 +86,26 @@ public class CameraController : MonoBehaviour
                         PlayerManager.instance.rotateRobots(rotateSpeed);
                         break;
                     case "Screen2":
-                        codecScript.swapScreenMaterial(0,1);
+                        HandleScreenSwap(1);
                         break;
                     case "Screen3":
-                        codecScript.swapScreenMaterial(0,2);
+                        HandleScreenSwap(2);
                         break;
                     case "Screen4":
-                        codecScript.swapScreenMaterial(0,3);
+                        HandleScreenSwap(3);
                         break;
                 }
-                /*
-                if (hit.transform.gameObject.CompareTag("leftButton"))
-                {
-                    PlayerManager.instance.rotateRobots(-rotateSpeed);
-                }
-                else if (hit.transform.gameObject.CompareTag("rightButton"))
-                {
-                    PlayerManager.instance.rotateRobots(rotateSpeed);
-                }
-                */
+        }
+        else buttonPressed = false;
+    }
+
+    //swap_num is the array position to swap the screen view with.
+    private void HandleScreenSwap(int swap_num)
+    {
+        if (!buttonPressed)
+        {
+            codecScript.swapRobotCamArrayPositions(0, swap_num);
+            buttonPressed = true;
         }
     }
 

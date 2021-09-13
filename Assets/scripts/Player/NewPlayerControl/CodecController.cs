@@ -28,11 +28,11 @@ public class CodecController : MonoBehaviour
         }
     }
     
-    public void swapScreenMaterial(int screenPos1, int screenPos2)
+    public void swapRobotCamArrayPositions(int Pos1, int Pos2)
     {
-        Material temp = codecCams[screenPos1].material;
-        codecCams[screenPos1].material = codecCams[screenPos2].material;
-        codecCams[screenPos2].material = temp;
+        Material temp = robotCam[Pos1];
+        robotCam[Pos1] = robotCam[Pos2];
+        robotCam[Pos2] = temp;
         Debug.Log("swapping screen");
     }
 }
