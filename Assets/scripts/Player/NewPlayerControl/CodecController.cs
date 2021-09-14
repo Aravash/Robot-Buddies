@@ -35,14 +35,6 @@ public class CodecController : MonoBehaviour
             }
         }
     }
-    
-    public void swapRobotCamArrayPositions(int Pos1, int Pos2)
-    {
-        Material temp = robotCam[Pos1];
-        robotCam[Pos1] = robotCam[Pos2];
-        robotCam[Pos2] = temp;
-        Debug.Log("swapping screen");
-    }
 
     public void swapWithMainCamera(GameObject otherCamera)
     {
