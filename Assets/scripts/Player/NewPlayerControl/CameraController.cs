@@ -86,13 +86,13 @@ public class CameraController : MonoBehaviour
                         PlayerManager.instance.rotateRobots(rotateSpeed);
                         break;
                     case "Screen2":
-                        HandleScreenSwap(1);
+                        HandleScreenSwap(hit.transform.gameObject, 1);
                         break;
                     case "Screen3":
-                        HandleScreenSwap(2);
+                        HandleScreenSwap(hit.transform.gameObject, 2);
                         break;
                     case "Screen4":
-                        HandleScreenSwap(3);
+                        HandleScreenSwap(hit.transform.gameObject, 3);
                         break;
                 }
         }
@@ -100,11 +100,11 @@ public class CameraController : MonoBehaviour
     }
 
     //swap_num is the array position to swap the screen view with.
-    private void HandleScreenSwap(int swap_num)
+    private void HandleScreenSwap(GameObject cam, int relative_bot)
     {
-        if (!buttonPressed)
+        if (!buttonPressed && PlayerManager.instance.IsCurrentRobotEnabled(relative_bot))
         {
-            codecScript.swapRobotCamArrayPositions(0, swap_num);
+            codecScript.swapWithMainCamera(cam);
             buttonPressed = true;
         }
     }

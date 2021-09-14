@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,13 @@ public class CodecController : MonoBehaviour
     public Renderer[] robotLights = new Renderer[4];
     public Material offScreen;
     public Material[] ToggleLights = new Material[2];
+
+    private GameObject bigScreen;
+
+    private void Awake()
+    {
+        bigScreen = codecCams[0].gameObject;
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,5 +42,22 @@ public class CodecController : MonoBehaviour
         robotCam[Pos1] = robotCam[Pos2];
         robotCam[Pos2] = temp;
         Debug.Log("swapping screen");
+    }
+
+    public void swapWithMainCamera(GameObject otherCamera)
+    {
+        string other_tag = otherCamera.tag;
+        otherCamera.tag = bigScreen.tag;
+        bigScreen.tag = other_tag;
+        
+        Vector3 other_position = otherCamera.transform.position;
+        otherCamera.transform.position = bigScreen.transform.position;
+        bigScreen.transform.position = other_position;
+        
+        Vector3 other_local_scale = otherCamera.transform.localScale;
+        otherCamera.transform.localScale = bigScreen.transform.localScale;
+        bigScreen.transform.localScale = other_local_scale;
+
+        bigScreen = otherCamera;
     }
 }
