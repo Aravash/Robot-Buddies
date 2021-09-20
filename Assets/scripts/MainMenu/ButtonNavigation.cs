@@ -7,7 +7,7 @@ public class ButtonNavigation : MonoBehaviour
 {
     public void startGame()
     {
-        SceneManager.LoadScene("Assets/Scenes/SampleScene.unity");
+        SceneManager.LoadScene("Assets/Scenes/newLevel1.unity");
     }
 
     public void quitGame()
