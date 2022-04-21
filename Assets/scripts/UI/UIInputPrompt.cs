@@ -11,7 +11,7 @@ public class UIInputPrompt : MonoBehaviour
     private Image img;
     private float opacity = 0;
     [SerializeField] private float goal_pos;
-    [SerializeField] private string button_name = "Fire1";
+    [SerializeField] private string button_name;
     [SerializeField] private bool i_want_to_die = false;
 
     private Vector3 target_pos;
@@ -26,7 +26,8 @@ public class UIInputPrompt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown(button_name) && i_want_to_die) Destroy(gameObject);
+        if (button_name == "selfdestruct" && i_want_to_die) Destroy(gameObject, 4);
+        else if (Input.GetButtonDown(button_name) && i_want_to_die) Destroy(gameObject);
 
         Vector2 pos = GetComponent<RectTransform>().anchoredPosition;
 
