@@ -59,8 +59,7 @@ public class PlayerController : Player
 
             if (Physics.Raycast(camera.transform.position, camera.forward, 1f, layerMask)) return;
             
-            GameObject obj = Instantiate(Orb, orbSpawnPoint.position, orbSpawnPoint.rotation);
-            //obj.GetComponent<Orb>().SetBots(ref robot);
+            Instantiate(Orb, orbSpawnPoint.position, orbSpawnPoint.rotation);
         }
     }
     
